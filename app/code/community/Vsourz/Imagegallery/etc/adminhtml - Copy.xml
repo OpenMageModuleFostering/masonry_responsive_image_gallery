@@ -26,16 +26,6 @@
 					<imagegallery>
 						<title>Image Gallery</title>
 						<sort_order>6</sort_order>
-						<children>
-							<imagecategory>
-								<title>Image Categories</title>
-								<sort_order>1</sort_order>
-							</imagecategory>
-							<imagedetail>
-								<title>Image Detail</title>
-								<sort_order>1</sort_order>
-							</imagedetail>
-						</children>
 					</imagegallery>
 					<system>
 						<children>
