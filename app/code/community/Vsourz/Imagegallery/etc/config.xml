@@ -92,4 +92,12 @@
             </imagegallery_read>
 		</resources>
 	</global>
+	<default>
+		<imagegallery>
+			<settings>
+				<loadjs>0</loadjs>
+				<imageloaded>0</imageloaded>
+			</settings>
+		</imagegallery>
+	</default>
 </config>

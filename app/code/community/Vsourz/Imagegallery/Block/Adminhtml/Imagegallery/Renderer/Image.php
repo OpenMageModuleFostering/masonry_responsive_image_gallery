@@ -6,7 +6,7 @@ Mage_Adminhtml_Block_Widget_Grid_Column_Renderer_Abstract {
 		if($value == NULL){
 			return "Image not inserted";
 		}else{
-			return '<img width="200" height="100" src="'.Mage::getBaseUrl('media').DS.$value . '" />';
+			return '<img width="200" height="100" src="'.Mage::getBaseUrl('media').$value . '" />';
 		}
 	}
 }

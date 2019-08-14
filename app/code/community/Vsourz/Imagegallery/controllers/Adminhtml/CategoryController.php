@@ -35,13 +35,13 @@ class Vsourz_Imagegallery_Adminhtml_CategoryController extends Mage_Adminhtml_Co
 					$uploader->setAllowRenameFiles(false);
 					// setAllowRenameFiles(true) -> move your file in a folder the magento way
 					$uploader->setFilesDispersion(false);
-					$path = Mage::getBaseDir('media') . DS .'imagegallery';
+					$path = Mage::getBaseDir('media').'/'.'imagegallery';
 					$imgName = explode('.',$_FILES['category_img']['name']);
 					$imgName[0] = $imgName[0].'-'.'category_img'.'-'.date('Y-m-d H-i-s');
 					$imgName = implode('.',$imgName);
 					$imgName = preg_replace('/\s+/', '-', $imgName);
 					$uploader->save($path, $imgName);
-					$data['category_img'] = 'imagegallery'.DS.$imgName;
+					$data['category_img'] = 'imagegallery/'.$imgName;
 				}catch(Exception $e){
 					
 				}
@@ -50,7 +50,7 @@ class Vsourz_Imagegallery_Adminhtml_CategoryController extends Mage_Adminhtml_Co
 				if(isset($data['category_img']) && $data['category_img']['delete'] == 1){
 					// delete image file
 					$image = explode(',',$data['category_img']);
-					unlink(Mage::getBaseDir('media').DS.$image[1]);
+					unlink(Mage::getBaseDir('media').'/'.$image[1]);
 					// set db blank entry
 					$data['category_img'] = ''; 
 				}else{
@@ -121,7 +121,7 @@ class Vsourz_Imagegallery_Adminhtml_CategoryController extends Mage_Adminhtml_Co
 				$id = $this->getRequest()->getParam('id');
 				$objModel = $model->load($id);
 				$path = Mage::getBaseDir('media');
-				unlink($path.DS.$objModel->categoryImg);
+				unlink($path.'/'.$objModel->categoryImg);
 				$objModel->setId($id)->delete();
 				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('adminhtml')->__('Item was successfully deleted'));
 				$this->_redirect('*/*/');
@@ -144,7 +144,7 @@ class Vsourz_Imagegallery_Adminhtml_CategoryController extends Mage_Adminhtml_Co
 				foreach($ids as $id){
 					$objModel = $imageModel->load($id);
 					$path = Mage::getBaseDir('media');
-					unlink($path.DS.$objModel->categoryImg);
+					unlink($path.'/'.$objModel->categoryImg);
 					$objModel->delete();
 				}
 				Mage::getSingleton('adminhtml/session')->addSuccess(Mage::helper('imagegallery')->__('Total of %d record(s) were deleted.', count($ids)));

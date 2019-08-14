@@ -11,7 +11,7 @@ box-sizing:border-box;
 .category-desc {padding:0 0 15px 0;}
 .cat-img {padding:0 0 15px 0;}
 .cat-img img{width:100%;}
-.image-gallery{overflow:hidden;padding:0;background:#FFF;margin:0 -15px;}
+.image-gallery{overflow:hidden;padding:0;background:#FFF;margin:0 -10px;}
 .gallery-item{
 	float:left;
 	width:33.33%;
