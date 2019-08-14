@@ -44,6 +44,12 @@ class Vsourz_Imagegallery_Block_Adminhtml_Image_Grid extends Mage_Adminhtml_Bloc
 			'width' => '50px',
 			'index' => 'category_id',
 			'renderer' => 'imagegallery/adminhtml_imagegallery_renderer_category'
+		));		
+		$this->addColumn('position', array(
+			'header' => Mage::helper('imagegallery')->__('Position'),
+			'align' => 'right',
+			'width' => '100px',
+			'index' => 'position',
 		));
 		$this->addColumn('status', array(
 			'header' => Mage::helper('imagegallery')->__('Status'),

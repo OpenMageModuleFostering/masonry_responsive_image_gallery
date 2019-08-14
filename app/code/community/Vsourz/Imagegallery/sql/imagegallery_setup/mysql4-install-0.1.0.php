@@ -18,7 +18,7 @@ $table = $installer->getConnection()
 		'nullable'  => false,
         ), 'Gallery Image')
 	->addColumn('category_id', Varien_Db_Ddl_Table::TYPE_TEXT, 50, array(
-        ), 'Category Id')
+        ), 'Category Id')	
     ->addColumn('status', Varien_Db_Ddl_Table::TYPE_SMALLINT, null, array(
         'nullable'  => false,
         'default'   => '0',

@@ -54,7 +54,27 @@ class Vsourz_Imagegallery_Block_Adminhtml_Image_Edit_Tabs_Form extends Mage_Admi
 			'style' => 'width:400px; height:250px;',
 			'config' => $wysiwygConfig,
 			'required' => false,
-			'wysiwyg' => true
+			'wysiwyg' => true,
+		));		
+		
+		$fieldset->addField('position', 'text', array(
+			'label' => Mage::helper('imagegallery')->__('Position'),
+			'class' => 'required-entry',
+			'required'  => true,
+			'name' => 'position',
+			'note' => 'Enter the position [in numeric] of image
+						<script>
+							document.getElementById("position").setAttribute("onkeypress", "return isNumberKey(event)");
+							function isNumberKey(evt)
+							{
+								var charCode = (evt.which) ? evt.which : evt.keyCode;
+								if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57))
+								return false;
+								return true;
+							}
+							if(document.getElementById("position").value=="")								
+							document.getElementById("position").setAttribute("value", "0");
+						</script>',			
 		));
 		
 		$fieldset->addField('status', 'select', array(
@@ -65,11 +85,12 @@ class Vsourz_Imagegallery_Block_Adminhtml_Image_Edit_Tabs_Form extends Mage_Admi
           'value'  => '0',
           'values' => array('0' => 'Disable','1' => 'Enable'),
           'disabled' => false,
-          'readonly' => false,
-          'tabindex' => 1
+          'readonly' => false,          
         ));
 		
 		$form->setValues($data);
 		return parent::_prepareForm();
 	}
 }
+?>
+

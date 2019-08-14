@@ -367,11 +367,6 @@ html,body {-webkit-backface-visibility:hidden;}
   max-width: 400px;
   margin: 0 auto; 
 }
-
-
-
-
-
 /* 
 
 ====== Zoom effect ======
@@ -724,21 +719,6 @@ h3 {
   margin-top: 0;
   font-size: 24px;
 }
-a,
-  a:visited {
-    color: #1760BF;
-    text-decoration: none;
-  }
-  a:hover {
-    color: #c00;
-  }
-.links {
-  ul {
-    
-  }
-  li {
-   margin-bottom: 5px; 
-  }
 }
 h4 {
   margin: 24px 0 0 0;
