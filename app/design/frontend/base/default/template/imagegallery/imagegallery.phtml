@@ -17,8 +17,9 @@ $catData = $catCollection->getData();
 	
 	<?php if($value['category_img']): ?>
 		<div class="cat-img">
-			<img src="<?php echo Mage::getBaseUrl().'media'.DS.$value['category_img'] ?>" title="<?php echo $value['category_title'] ?>" alt="<?php echo $value['category_title'] ?>"/>
+			<img src="<?php echo Mage::getBaseUrl('media').$value['category_img'] ?>" title="<?php echo $value['category_title'] ?>" alt="<?php echo $value['category_title'] ?>"/>
 		</div>
+        <?php //echo Mage::getBaseUrl('media'); ?>
 	<?php endif; ?>
 	
 	<?php if($value['category_description']): ?>
@@ -36,11 +37,11 @@ $catData = $catCollection->getData();
 	<li class="gallery-item masonry-entry">
 		<div class="img-box">
 		<div class="img-box-inner">
-			<a class="imagegallery" href="<?php echo Mage::getBaseUrl().'media'.DS.$data['gallery_img']; ?>" title="<?php echo $data['image_title'] ?>"><img src="<?php echo Mage::getBaseUrl().'media'.DS.$data['gallery_img']; ?>" alt="<?php echo $data['image_title'] ?>"/></a>
+			<a class="imagegallery" href="<?php echo Mage::getBaseUrl('media').$data['gallery_img']; ?>" title="<?php echo $data['image_title'] ?>"><img src="<?php echo Mage::getBaseUrl('media').$data['gallery_img']; ?>" alt="<?php echo $data['image_title'] ?>"/></a>
 			<div class="gallery-desc-box">
             <div class="gallery-content">
 				<h3 class="gallery-title">
-			<a class="imagetitle" href="<?php echo Mage::getBaseUrl().'media'.DS.$data['gallery_img']; ?>" title="<?php echo $data['image_title'] ?>"><?php echo $data['image_title'] ?></a>
+			<a class="imagetitle" href="<?php echo Mage::getBaseUrl('media').$data['gallery_img']; ?>" title="<?php echo $data['image_title'] ?>"><?php echo $data['image_title'] ?></a>
 			</h3>
 				
 				<?php if($data['image_description']): ?>
@@ -48,7 +49,7 @@ $catData = $catCollection->getData();
 					<?php echo $data['image_description'] ?>
 				</div>
 				<?php endif; ?>			
-				<a class="image-link gallery-block "   data-effect="mfp-move-horizontal" href="<?php echo Mage::getBaseUrl().'media'.DS.$data['gallery_img']; ?>" title="<?php echo $data['image_title'] ?>"><?php echo $data['image_title'] ?>
+				<a class="image-link gallery-block "   data-effect="mfp-move-horizontal" href="<?php echo Mage::getBaseUrl('media').$data['gallery_img']; ?>" title="<?php echo $data['image_title'] ?>"><?php echo $data['image_title'] ?>
 			<i class="fa"></i>
 			</a>
             </div>
