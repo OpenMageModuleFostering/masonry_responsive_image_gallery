@@ -47,7 +47,7 @@ class Vsourz_Imagegallery_Adminhtml_CategoryController extends Mage_Adminhtml_Co
 				}
 			}
 			else{       
-				if(isset($data['category_img']['delete']) && $data['category_img']['delete'] == 1){
+				if(isset($data['category_img']) && $data['category_img']['delete'] == 1){
 					// delete image file
 					$image = explode(',',$data['category_img']);
 					unlink(Mage::getBaseDir('media').DS.$image[1]);

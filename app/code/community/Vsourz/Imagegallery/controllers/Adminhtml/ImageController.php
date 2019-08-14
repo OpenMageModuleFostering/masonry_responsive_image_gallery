@@ -28,14 +28,14 @@ class Vsourz_Imagegallery_Adminhtml_ImageController extends Mage_Adminhtml_Contr
 				$model->load($id);
 			}
 			//Code to Save Gallery Image
-			if(isset($_FILES['gallery_img']['name']) and (file_exists($_FILES['gallery_img']['tmp_name']))){
+			if(isset($_FILES['gallery_img']['name']) && (file_exists($_FILES['gallery_img']['tmp_name']))){
 				try{
 					$uploader = new Varien_File_Uploader('gallery_img');
 					$uploader->setAllowedExtensions(array('jpg','jpeg','gif','png')); // or pdf or anything
 					$uploader->setAllowRenameFiles(false);
 					// setAllowRenameFiles(true) -> move your file in a folder the magento way
 					$uploader->setFilesDispersion(false);
-					$path = Mage::getBaseDir('media') . DS .'imagegallery';
+					$path = Mage::getBaseDir('media'). DS .'imagegallery' .DS;
 					$imgName = explode('.',$_FILES['gallery_img']['name']);
 					$imgName[0] = $imgName[0].'-'.'gallery-img'.'-'.date('Y-m-d H-i-s');
 					$imgName = implode('.',$imgName);
@@ -47,10 +47,13 @@ class Vsourz_Imagegallery_Adminhtml_ImageController extends Mage_Adminhtml_Contr
 				}
 			}
 			else{       
-				if(isset($data['gallery_img']['delete']) && $data['gallery_img']['delete'] == 1){
+				if(isset($data['gallery_img']) && $data['gallery_img']['delete'] == 1){
 					// delete image file
 					$image = explode(',',$data['gallery_img']);
-					unlink(Mage::getBaseDir('media').DS.$image[1]);
+					$img = Mage::getBaseDir(Mage_Core_Model_Store::URL_TYPE_MEDIA). DS .$image[1] .DS;
+					if(file_exists($img)){
+						unlink($img);
+					}
 					// set db blank entry
 					$data['gallery_img'] = ''; 
 				}else{
