@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/Masonry_Responsive_Image_Gallery",
+    "type": "magento-module",
+    "license": "Massachusetts-Institute-of-Technology-License-(MITL)",
+    "homepage": "",
+    "description": "Masonry Responsive Image Gallery is a categorised Image gallery built on the Top of masonry JS. The image gallery is fully manageable from admin with ability to create unlimited gallery",
+    "authors": [
+    {
+        "name": "Vsourz Digital",
+        "email": "mehul@vsourz.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
